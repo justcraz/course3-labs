@@ -3,9 +3,9 @@
 int main()
 {
 int n,m;
-printf("Введите n: ");
+printf("Введіть n: ");
 scanf("%d", &n);
-printf("Введите m: ");
+printf("Введіть m: ");
 scanf("%d", &m);
 int A[n][m];
 int b[m];
@@ -14,7 +14,7 @@ for(int x = 0; x < n; x++)
 {
 for(int y = 0; y < m; y++)
 {
-printf("Введите значение A[%d][%d]",x,y);
+printf("Введіть значення A[%d][%d]",x,y);
 scanf("%d", &A[x][y]);
 }
 }
