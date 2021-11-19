@@ -4,7 +4,7 @@
 
 const char alphabet[] = "aAbBcCdDeEfFGghHiIjJkKlLMmNnOoPpQqRrSsTtUuVvWwXxYyZz"; /* 26*2 = 52 */
 const char golosny[] = "aAEeIiOoUuYy"; /* 6*2 = 12 */
-
+int counter = 0;
 int is_letter(const char c)
 {
 for(int x = 0; x < 52; x++)
@@ -25,6 +25,7 @@ const int size = 1024;
 char * str;
 str = (char *) malloc(size);
 
+printf("Введіть рядок: ");
 gets(str); /* введення рядка з клавіатури */
 int len = strlen(str); /* довжина рядка */
 int count_golos = 0; /* для підрахунку слів, що закінчуються на голосні */
@@ -42,10 +43,8 @@ if( is_golosna(str[x]) )
 count_golos++;
 }
 if(word_len < 5) /* якщо довжина слова менше п'яти символів */
+counter++;
 {
-for(int y = x - word_len + 1; y <= x; y++) /* друкуємо слово */
-putchar(str[y]);
-putchar('\n');
 }
 }
 }
@@ -56,9 +55,11 @@ word_len = 0;
 }
 
 printf("Кількість слів у рядку, що закінчуються на голосну -- %d.\n", count_golos);
+printf("Кількість слів довжина яка менша 5 символів: %d", counter);
 
 free(str);
 str = NULL;
 
 return 0;
 }
+
